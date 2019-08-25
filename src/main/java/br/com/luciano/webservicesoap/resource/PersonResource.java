@@ -9,13 +9,15 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-@Endpoint("/persons")
+@Endpoint
 public class PersonResource {
+
+    private static final String NAMESPACE_URI = "http://www.luciano.com.br/webservicesoap/xml";
 
     @Autowired
     private PersonRepository personRepository;
 
-    @PayloadRoot(localPart = "PersonDetailsRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "PersonDetailsRequest")
     @ResponsePayload
     public PersonDetailsResponse getPerson(@RequestPayload PersonDetailsRequest request) {
         PersonDetailsResponse response = new PersonDetailsResponse();
