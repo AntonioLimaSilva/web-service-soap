@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.luciano.com.br/webservicesoap/xml"
+           targetNamespace="http://www.luciano.com.br/webservicesoap/xml" elementFormDefault="qualified">
+
+    <xs:element name="PersonDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="PersonDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Person" type="tns:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="address" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
