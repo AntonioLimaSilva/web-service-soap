@@ -21,7 +21,7 @@ public class PersonResource {
     @ResponsePayload
     public PersonDetailsResponse getPerson(@RequestPayload PersonDetailsRequest request) {
         PersonDetailsResponse response = new PersonDetailsResponse();
-        response.setPerson(this.personRepository.findByName(request.getName()));
+        response.setPerson(this.personRepository.findByName(request.getId()));
 
         return response;
     }
